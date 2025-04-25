@@ -1,6 +1,6 @@
 import { flights } from "./data/flights";
 
-export const fetchFlights = async (options) => {
+export const fetchFlights = async (options = {}) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   let filteredFlights = flights;
 
@@ -10,17 +10,18 @@ export const fetchFlights = async (options) => {
     });
   }
 
-  if (options?.price) {
+  if (typeof options?.price === "number") {
     filteredFlights = filteredFlights.filter((flight) => {
-      return flight.price <= Number(options.price);
+      return flight.price >= Number(options.price);
     });
   }
 
-  if (options?.stops) {
+  if (options?.stops === tr) {
     filteredFlights = filteredFlights.filter((flight) => {
       return flight.stops === 0;
     });
   }
+
 
   return filteredFlights;
 };
