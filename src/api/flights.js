@@ -12,7 +12,7 @@ export const fetchFlights = async (options = {}) => {
 
   if (typeof options?.price === "number") {
     filteredFlights = filteredFlights.filter((flight) => {
-      return flight.price >= Number(options.price);
+      return flight.price <= Number(options.price);
     });
   }
 
@@ -24,3 +24,11 @@ export const fetchFlights = async (options = {}) => {
 
   return filteredFlights;
 };
+
+export const airlineOptions = [
+  ...new Set(flights.map((flight) => flight.airline)),
+];
+
+// export const priceOptions = [
+//   ...new Set(flights.map((flight) => flight.airline)),
+// ];

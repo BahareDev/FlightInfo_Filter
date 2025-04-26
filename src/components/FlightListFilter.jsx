@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from "react";
+import FilterDropDown from "./FilterDropDown";
+import { airlineOptions } from "../api/flights";
 
 export default function FlightListFilter({ onChange }) {
   const [airline, setairline] = useState("");
   const [stops, setStops] = useState(false);
   const [price, setPrice] = useState("");
+
+  const priceOptions = [
+    { value: "all", label: "همه" },
+    { value: "100", label: "100-400" },
+    { value: "400", label: "410-800" },
+    { value: "800", label: "810-1000" },
+  ];
 
   useEffect(() => {
     const filters = {};
@@ -15,24 +24,18 @@ export default function FlightListFilter({ onChange }) {
   }, [airline, stops, price, onChange]);
 
   return (
-    <div className="w-3xs">
+    <aside className="w-full lg:w-1/4 border-b md:border-b-0 md:border-r border-gray-200 p-4 bg-gray-50 sticky top-0 h-auto md:h-screen">
       <div className="border-b-1 border-gray-200 font-bold pb-2">
         3 مورد پیدا شد
       </div>
 
       <section className="my-4">
-        <h2 className="text-lg font-semibold mb-4 ">قیمت </h2>
-
-        <select
-          className="border border-gray-300 px-2 rounded-xl w-full "
+        <FilterDropDown
+          options={priceOptions}
           value={price}
           onChange={(e) => setPrice(e.target.value)}
-        >
-          <option value="all">همه</option>
-          <option value="100">300-400</option>
-          <option value="300">450-600</option>
-          <option value="400">700-800</option>
-        </select>
+          title={"قیمت ها"}
+        />
       </section>
 
       <section className="mb-8">
@@ -48,24 +51,17 @@ export default function FlightListFilter({ onChange }) {
         </div>
       </section>
 
-      <section>
-        <h2 className="text-lg font-semibold mb-4">ایرلاین ها</h2>
-        <div className="flex flex-col gap-2">
-          <select
-            value={airline}
-            onChange={(e) => setairline(e.target.value)}
-            className="border border-gray-300 px-2 rounded-xl w-full "
-          >
-            <option value="all">همه</option>
-            {
-              
-            }
-            <option value="Emirates">Emirates</option>
-            <option value="Turkish Airlines">Turkish Airlines</option>
-            <option value="Lufthansa">Lufthansa</option>
-          </select>
-        </div>
+      <section className="flex flex-col gap-2">
+        <FilterDropDown
+          options={airlineOptions.map((airline) => ({
+            value: airline,
+            label: airline,
+          }))}
+          value={airline}
+          onChange={(e) => setairline(e.target.value)}
+          title={"ایرلاین ها"}
+        />
       </section>
-    </div>
+    </aside>
   );
 }

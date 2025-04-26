@@ -21,13 +21,14 @@ function FlightList({ flights }) {
             </div>
 
             <div className="flex items-center w-40 justify-center text-gray-600 text-sm">
-              <div>تهران</div>
+              <div>{flight.from}</div>
               <span className="mx-2">➔</span>
-              <div>ساری</div>
+              <div>{flight.to}</div>
             </div>
 
             <div className="w-40 text-center text-gray-400 text-xs">
-              ۵:۱۵ ➔ ۵:۴۵ ({flight.stops})
+              {flight.departure} ➔ {flight.arrival} (
+              {flight.stops === 0 ? "بدون توقف" : flight.stops})
             </div>
 
             <div className="flex flex-col items-center md:items-end w-40 gap-2">
