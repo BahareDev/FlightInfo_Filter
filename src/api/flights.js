@@ -16,12 +16,11 @@ export const fetchFlights = async (options = {}) => {
     });
   }
 
-  if (options?.stops === tr) {
+  if (options?.stops === true) {
     filteredFlights = filteredFlights.filter((flight) => {
       return flight.stops === 0;
     });
   }
-
 
   return filteredFlights;
 };

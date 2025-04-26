@@ -15,35 +15,57 @@ export default function FlightListFilter({ onChange }) {
   }, [airline, stops, price, onChange]);
 
   return (
-    <div className="flex space-x-16 bg-amber-300 my-4 px-8 py-4">
-      <div className="border">
-        <select value={airline} onChange={(e) => setairline(e.target.value)}>
-          <option value="all">all</option>
-          <option value="Emirates">Emirates</option>
-          <option value="Turkish Airlines">Turkish Airlines</option>
-          <option value="Lufthansa">Lufthansa</option>
-        </select>
+    <div className="w-3xs">
+      <div className="border-b-1 border-gray-200 font-bold pb-2">
+        3 مورد پیدا شد
       </div>
 
-      <div className="border">
-        <label>
-          <input
-            type="checkbox"
-            checked={stops}
-            onChange={() => setStops((check) => !check)}
-          />
-          Non Stops
-        </label>
-      </div>
+      <section className="my-4">
+        <h2 className="text-lg font-semibold mb-4 ">قیمت </h2>
 
-      <div className="border">
-        <select value={price} onChange={(e) => setPrice(e.target.value)}>
-          <option value="all">all</option>
+        <select
+          className="border border-gray-300 px-2 rounded-xl w-full "
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        >
+          <option value="all">همه</option>
           <option value="100">300-400</option>
           <option value="300">450-600</option>
           <option value="400">700-800</option>
         </select>
-      </div>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold mb-4">توقف ها</h2>
+        <div className="flex items-center mb-2">
+          <input
+            type="checkbox"
+            checked={stops}
+            onChange={() => setStops((check) => !check)}
+            className="accent-blue-600"
+          />
+          <label className="ml-2 text-sm p-1">بدون توقف</label>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-lg font-semibold mb-4">ایرلاین ها</h2>
+        <div className="flex flex-col gap-2">
+          <select
+            value={airline}
+            onChange={(e) => setairline(e.target.value)}
+            className="border border-gray-300 px-2 rounded-xl w-full "
+          >
+            <option value="all">همه</option>
+            {
+              
+            }
+            <option value="Emirates">Emirates</option>
+            <option value="Turkish Airlines">Turkish Airlines</option>
+            <option value="Lufthansa">Lufthansa</option>
+          </select>
+        </div>
+      </section>
     </div>
   );
 }
