@@ -58,10 +58,14 @@ Here’s a list of planned improvements and optional challenges:
 ### Future Improvements
 
 *   Integrate real-time flight data using an open API
+  
+*   Add pagination for results
     
 *   Add filter options for other things like departure/arrival time, destination, etc.
     
-*   Implement a fully responsive design for mobile and tablet views.
+*   Implement a fully responsive design for mobile and tablet views and UI animations.
+  
+*   Improve price filter by using a slider instead of a drop-down menu. 
     
 *   Add a menu in the sidebar for more ux and responsiveness
     
@@ -101,7 +105,7 @@ Start the development server:
 
 The app will be running at [http://localhost:5173](http://localhost:5173).    
 
- ## 🤝Contributing
+## 🤝Contributing
  
 Contributions are welcome! If you have suggestions for improvements or find a bug, feel free to open an [issue](https://github.com/BahareDev/FlightInfo_Filter/issues) or submit a pull request.
 
