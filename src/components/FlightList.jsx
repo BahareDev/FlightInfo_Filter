@@ -1,6 +1,6 @@
 import React from "react";
-// bg-white border  border-black rounded-lg flex flex-col gap-8 md:flex-row justify-between items-center p-4 shadow-sm
-function FlightList({ flights }) {
+
+export default function FlightList({ flights }) {
   return (
     <div className=" w-full lg:w-3/4 mt-6 space-y-6">
       {flights.map((flight) => (
@@ -45,5 +45,3 @@ function FlightList({ flights }) {
     </div>
   );
 }
-
-export default FlightList;

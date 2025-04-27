@@ -8,10 +8,10 @@ export default function FlightListFilter({ onChange }) {
   const [price, setPrice] = useState("");
 
   const priceOptions = [
-    { value: "all", label: "همه" },
-    { value: "100", label: "100-400" },
-    { value: "400", label: "410-800" },
-    { value: "800", label: "810-1000" },
+    { value: "0-300", label: "۰ تا ۳۰۰ دلار" },
+    { value: "301-600", label: "۳۰۰ تا ۶۰۰ دلار" },
+    { value: "601-900", label: "۶۰۰ تا ۹۰۰ دلار" },
+    { value: "901-1200", label: "۹۰۰ تا ۱۲۰۰ دلار" },
   ];
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function FlightListFilter({ onChange }) {
   return (
     <aside className="w-full lg:w-1/4 border-b md:border-b-0 md:border-r border-gray-200 p-4 bg-gray-50 sticky top-0 h-auto md:h-screen">
       <div className="border-b-1 border-gray-200 font-bold pb-2">
-        3 مورد پیدا شد
+        {}
       </div>
 
       <section className="my-4">

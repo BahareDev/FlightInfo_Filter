@@ -19,7 +19,7 @@ function App() {
     <div className="w-full">
       <Header />
 
-      <div className="flex flex-col lg:flex-row gap-30  bg-gray-100">
+      <div className="flex flex-col lg:flex-row gap-30 bg-gray-100">
         <FlightListFilter
           onChange={(filters) => {
             setAirline(filters.airline);

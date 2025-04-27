@@ -10,9 +10,11 @@ export const fetchFlights = async (options = {}) => {
     });
   }
 
-  if (typeof options?.price === "number") {
+  if (typeof options?.price === "string" && options.price !== "all") {
+    const [min, max] = options.price.split("-").map(Number);
+
     filteredFlights = filteredFlights.filter((flight) => {
-      return flight.price <= Number(options.price);
+      return flight.price >= min && flight.price <= max;
     });
   }
 
@@ -24,7 +26,6 @@ export const fetchFlights = async (options = {}) => {
 
   return filteredFlights;
 };
-
 export const airlineOptions = [
   ...new Set(flights.map((flight) => flight.airline)),
 ];

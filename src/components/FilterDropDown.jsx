@@ -9,10 +9,13 @@ function FilterDropDown({ value, onChange, options, title }) {
         value={value}
         onChange={onChange}
       >
+        <option value="all">همه</option>
         {options.map((option, index) => (
-          <option key={index} value={option.value}>
-            {option.label}
-          </option>
+          <>
+            <option key={index} value={option.value}>
+              {option.label}
+            </option>
+          </>
         ))}
       </select>
     </>
