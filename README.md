@@ -119,17 +119,13 @@ Steps:
     
 
 ## 📄License
-----------
 
 This project is licensed under the MIT License.
 
-## 🙏Acknowledgements
--------------------
+## 🙏Acknowledgement
 
 *   [React](https://react.dev/)
     
 *   [Vite](https://vitejs.dev/)
     
 *   [ESLint](https://eslint.org/)
-    
-*   [Open Flight APIs](https://aviationstack.com/) (for future integration)
