@@ -62,7 +62,7 @@ Initially, handling multiple filters (airline, price, stops) was complicated bec
 
 **Solution:**  
 We created a `filters` object that gathers all the current filter states and sends them once to the data fetching function.  
-This made the filtering flexible and scalable for adding new filters.
+This made the filtering flexible and scalable for adding new filters. We ensured each filter change triggers a controlled, debounced fetch via `useEffect`, maintaining clean separation between UI state and fetched data state.
 
 ```javascript
 const filters = {};
@@ -84,6 +84,25 @@ For example, one of the conditions for the price is:
   }
 ```
 
+### Challenge 2: Ensuring Reusability and Scalability of Filter Components
+
+**Problem:**
+Initial hardcoded select inputs (<select>) would limit reusability when new filters (e.g., "duration" or "baggage") were added.
+
+**Solution:**
+We built a reusable `FilterDropDown component` that dynamically accepts options, value, and event handlers.
+No matter how many filters are added later, we can plug and play using the same component.
+
+Future-proof architecture for scaling up the application without rewriting code.
+
+```javascript
+<FilterDropDown
+  options={priceOptions}
+  value={price}
+  onChange={(e) => setPrice(e.target.value)}
+  title="Prices"
+/>
+```
 
 ### Future Improvements
 
