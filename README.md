@@ -9,12 +9,12 @@ A simple React application to filter and display flight information.Built with [
 *   [About the Project](#about-the-project)
     
 *   [Features](#features)
+
+*   [Usage](#usage)
+
+*   [Challenges and Improvements](#challenges-and-improvements)
     
 *   [Getting Started](#getting-started)
-    
-*   [Usage](#usage)
-    
-*   [Challenges and Improvements](#challenges-and-improvements)
     
 *   [Contributing](#contributing)
     
@@ -54,6 +54,36 @@ Once you run the project:
 Here’s a list of planned improvements and optional challenges:
 
 ### Challenges
+
+### Challenge 1: Managing Multiple Dynamic Filters
+
+**Problem:**  
+Initially, handling multiple filters (airline, price, stops) was complicated because different states needed to be synchronized and applied to the dataset correctly.
+
+**Solution:**  
+We created a `filters` object that gathers all the current filter states and sends them once to the data fetching function.  
+This made the filtering flexible and scalable for adding new filters.
+
+```javascript
+const filters = {};
+if (airline && airline !== "all") filters.airline = airline;
+if (stops) filters.stops = true;
+if (price && price !== "all") filters.price = price;
+onChange(filters);
+```
+We created a **data fetching function** and all conditions we need to `filter.js` because we can easily handle them and improve them later.
+For example, one of the conditions for the price is: 
+
+```javascript
+  if (typeof options?.price === "string" && options.price !== "all") {
+    const [min, max] = options.price.split("-").map(Number);
+
+    filteredFlights = filteredFlights.filter((flight) => {
+      return flight.price >= min && flight.price <= max;
+    });
+  }
+```
+
 
 ### Future Improvements
 
