@@ -84,18 +84,18 @@ For example, one of the conditions for the price is:
   }
 ```
 
-### Challenge 2: Ensuring Reusability and Scalability of Filter Components
+### Challenge2: Making Filter Components Reusable
 
-**Problem:**
-Initial hardcoded select inputs (<select>) would limit reusability when new filters (e.g., "duration" or "baggage") were added.
+**Problem:**  
+Initial hardcoded `<select>` inputs would limit reusability when new filters (e.g., "duration" or "baggage") were added.
 
-**Solution:**
-We built a reusable `FilterDropDown component` that dynamically accepts options, value, and event handlers.
+**Solution:**  
+We built a reusable `FilterDropDown` component that dynamically accepts `options`, `value`, and `onChange` event handlers.  
 No matter how many filters are added later, we can plug and play using the same component.
 
-Future-proof architecture for scaling up the application without rewriting code.
+✅ **Future-proof architecture** for scaling up the application without rewriting code.
 
-```javascript
+```jsx
 <FilterDropDown
   options={priceOptions}
   value={price}
@@ -104,7 +104,8 @@ Future-proof architecture for scaling up the application without rewriting code.
 />
 ```
 
-### Future Improvements
+
+### ✨Future Improvements
 
 *   Integrate real-time flight data using an open API
   
@@ -173,7 +174,6 @@ Steps:
 
 ## 📄License
 
-This project is licensed under the MIT License.
 
 ## 🙏Acknowledgement
 
