@@ -24,10 +24,8 @@ export default function FlightListFilter({ onChange }) {
   }, [airline, stops, price, onChange]);
 
   return (
-    <aside className="w-full lg:w-1/4 border-b md:border-b-0 md:border-r border-gray-200 p-4 bg-gray-50 sticky top-0 h-auto md:h-screen">
-      <div className="border-b-1 border-gray-200 font-bold pb-2">
-        {}
-      </div>
+    <aside className="w-full lg:w-1/4 border-b md:border-b-0 md:border-r border-gray-200 p-4 bg-gray-50 sticky top-0 h-auto ">
+      <div className="border-b-1 border-gray-200 font-bold pb-2">{}</div>
 
       <section className="my-4">
         <FilterDropDown

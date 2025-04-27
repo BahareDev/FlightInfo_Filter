@@ -33,7 +33,7 @@ export default function FlightList({ flights }) {
 
             <div className="flex flex-col items-center md:items-end w-40 gap-2">
               <div className="text-xl text-center font-bold text-blue-600">
-                {flight.price} تومان
+                {flight.price}$
               </div>
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition text-sm">
                 جزئیات و خرید
