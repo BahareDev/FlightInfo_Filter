@@ -100,7 +100,7 @@ No matter how many filters are added later, we can plug and play using the same 
   options={priceOptions}
   value={price}
   onChange={(e) => setPrice(e.target.value)}
-  title="Prices"
+  title="قیمت ها"
 />
 ```
 
